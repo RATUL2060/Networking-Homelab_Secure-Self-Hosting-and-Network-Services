@@ -1,4 +1,4 @@
-📌 Project Motivation
+# 📌 Project Motivation:
 
 I wanted to build a personal media server that I could access securely from anywhere, especially on my mobile device.
 While my computer is mainly used for work and learning, my phone is my primary device for entertainment. This naturally led me to explore Jellyfin as a self-hosted alternative to cloud streaming services.
@@ -12,7 +12,7 @@ However, when I wanted to access it securely from my mobile device outside my ho
 
 This project became a problem-driven learning journey, not just a media server setup.
 
-🎯 Purpose of This Repository
+### 🎯 *Purpose of This Repository:*
 
 This repository documents my hands-on exploration of how services are:
 
@@ -32,54 +32,94 @@ Real fixes
 
 Gradual improvement over time
 
-🧠 What This Project Covers
+### 🧠 *What This Project Covers:*
 
 This repository will progressively document my learning and implementation of:
 
-Self-hosting fundamentals
+- Self-hosting fundamentals
 
-Reverse proxies
+- Reverse proxies
 
-SSL/TLS and certificate handling
+- SSL/TLS and certificate handling
 
-DNS & Dynamic DNS
+- DNS & Dynamic DNS
 
-Secure exposure using tunnels
+- Secure exposure using tunnels
 
-Docker-based service deployment
+- Docker-based service deployment
 
-VPN-based private access
+- VPN-based private access
 
-MikroTik RouterOS networking labs
+- MikroTik RouterOS networking labs
 
 Each topic is added step by step, following how the problems were discovered and solved in real life.
 
-🛠️ Technologies Used (So Far)
+### 🛠️ *Technologies Used:*
 
-Jellyfin — Media Server
+* Jellyfin — Media Server
 
-DuckDNS — Dynamic DNS
+* DuckDNS — Dynamic DNS
 
-Cloudflare Tunnel — Secure outbound tunneling
+* Cloudflare Tunnel — Secure outbound tunneling
 
-Caddy — Reverse Proxy (learning phase)
+* Caddy — Reverse Proxy (learning phase)
 
-Nginx Proxy Manager — Reverse Proxy with Docker
+* Nginx Proxy Manager — Reverse Proxy with Docker
 
-Docker & Docker Desktop (WSL-based)
+* Docker & Docker Desktop (WSL-based)
 
-WireGuard VPN — Private remote access
+* WireGuard VPN — Private remote access
 
-MikroTik RouterOS — PPP, VPN, routing, firewall labs
+* MikroTik RouterOS — PPP, VPN, routing, firewall labs
 
-📘 Learning Philosophy
+### 📘 *Learning Philosophy:*
 
 This is not a copy-paste tutorial project.
 
 It is a problem-driven learning log, very similar to how issues are identified, tested, and solved in real NOC and ISP environments.
 
-## 🧩 Architecture:
+### 🧩 *Architecture:*
 
 ![Secure Jellyfin Architecture](architecture.png)
+
+## 📅 *Jellyfin LAN Validation & External Access Test:*
+
+### 🖥️ *Local Network Setup (LAN):*
+
+Jellyfin was installed and configured within the local network:
+
+Media libraries were added and indexed
+
+Jellyfin was bound to a local IP
+
+Accessed via the default port:
+
+![LocalNetworkSetup](LocalNetworkSetup.png)
+
+### 🌐 *External Access via Port Forwarding:*
+
+To access Jellyfin from outside the home network, port forwarding was configured:
+
+![ExternalAccess](ExternalAccess.png)
+
+This made Jellyfin reachable from:
+
+- Mobile data
+
+- Office network
+
+### ⚠️ *Key Security Observations:*
+
+While port forwarding was simple, it introduced serious risks:
+
+Jellyfin was directly exposed to the internet
+
+Traffic was served over unencrypted HTTP
+
+Open ports are easily discoverable by scanners
+
+Increased risk of unauthorized access and brute-force attacks
+
+
 
 
