@@ -1,4 +1,4 @@
-📌 Project Motivation (Day 1)
+📌 Project Motivation
 
 I wanted to build a personal media server that I could access securely from anywhere, especially on my mobile device.
 While my computer is mainly used for work and learning, my phone is my primary device for entertainment. This naturally led me to explore Jellyfin as a self-hosted alternative to cloud streaming services.
