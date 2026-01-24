@@ -82,7 +82,7 @@ It is a problem-driven learning log, very similar to how issues are identified, 
 
 ![Secure Jellyfin Architecture](architecture.png)
 
-## 📅 *Jellyfin LAN Validation & External Access Test:*
+## 📅 Jellyfin LAN Validation & External Access Test:
 
 ### 🖥️ *Local Network Setup (LAN):*
 
@@ -121,5 +121,83 @@ Open ports are easily discoverable by scanners
 Increased risk of unauthorized access and brute-force attacks
 
 
+## 📅 Reverse Proxy & HTTPS (Why SSL Matters):
 
+🔁 What Is a Reverse Proxy?
 
+A reverse proxy is a service that sits in front of an application and acts as an intermediary between users and the backend service.
+
+### *🔐 Why HTTPS (SSL/TLS) Is Critical:*
+
+Serving Jellyfin over HTTP means:
+
+* Login credentials are sent in plain text
+
+* Traffic can be intercepted
+
+* Sessions can be hijacked
+
+HTTPS solves this by:
+
+* Encrypting all traffic
+
+* Verifying server identity
+
+* Protecting credentials and streams
+
+Modern HTTPS relies on SSL/TLS certificates
+
+### *⚙️ What I Tried:*
+
+At this stage, I experimented with using a reverse proxy in front of Jellyfin:
+
+* Jellyfin continued running on a private LAN IP
+
+* The reverse proxy handled:
+
+  * Incoming HTTPS traffic
+
+  * SSL certificate issuance
+
+  * Forwarding requests internally to Jellyfin
+
+This immediately improved the security posture:
+
+* Jellyfin was no longer directly exposed
+
+* All external traffic was encrypted
+
+* Access was routed through a single controlled entry point
+
+### *🖥️ Caddy Reverse Proxy:*
+
+![LocalNetworkSetup](Caddy.png)
+
+What’s happening here:
+
+* Caddy is installed and managed using NSSM (Non-Sucking Service Manager)
+  → This allows Caddy to run persistently as a Windows background service.
+
+* Caddy automatically requests an SSL/TLS certificate from Let’s Encrypt for:
+
+![LocalNetworkSetup](duckdns.png)
+
+* The logs show:
+
+  * Successful ACME TLS-ALPN challenge
+
+  * Certificate issuance and validation
+
+  * HTTPS being enabled without manual certificate configuration
+
+Jellyfin is now accessible securely via:
+
+![LocalNetworkSetup](https.png)
+
+* All external traffic is:
+
+  * Encrypted (HTTPS)
+
+ * Terminated at Caddy
+
+ * Safely forwarded to Jellyfin running on a local private IP
