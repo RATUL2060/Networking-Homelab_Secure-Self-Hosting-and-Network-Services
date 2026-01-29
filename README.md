@@ -271,7 +271,7 @@ Instead of:
 
 * Letting the internet connect into your home
 
-### ⚙️ What I Tested:
+### ⚙️ *What I Tested:*
 
 * Created a Cloudflare Quick Tunnel
 
@@ -283,7 +283,7 @@ Instead of:
 
   * External networks
 
-###⚠️ Limitations Discovered:
+### ⚠️ *Limitations Discovered:*
 
 →🔗 Temporary URLs
 
