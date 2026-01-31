@@ -291,3 +291,57 @@ Instead of:
 
 * Not suitable for long-term use
 
+## 📅 WireGuard VPN:
+
+### 🔐 *Why Add a VPN?*
+
+Some services are best kept private, even if they are secure:
+
+* Admin panels
+
+* Management dashboards
+
+* Internal services
+
+* Personal-only media access
+
+Exposing these publicly increases attack surface unnecessarily.
+
+A VPN allows access as if the device were inside the home network, without exposing the service to the internet.
+
+###🧩 What Is WireGuard?
+
+![Secure Wireguard](Wireguard.png)
+
+
+WireGuard is a modern VPN protocol designed to be:
+
+* Lightweight
+
+* Fast
+
+* Secure by default
+
+* Easy to audit
+
+Unlike older VPNs, WireGuard uses:
+
+* Strong cryptography
+
+* Minimal configuration
+
+* Simple peer-based connections
+
+###🔁 *Traffic Flow:*
+
+![Secure Wireguard](Wireguard.png)
+
+###⚙️ *How I Used It:*
+
+WireGuard server was configured on the home router
+
+Client profiles were created for remote devices
+
+Devices connected securely over the internet
+
+
