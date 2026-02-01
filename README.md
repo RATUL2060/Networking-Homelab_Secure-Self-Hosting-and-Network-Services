@@ -346,3 +346,39 @@ Client profiles were created for remote devices
 Devices connected securely over the internet
 
 
+
+
+
+# 🔧 MikroTik RouterOS Labs
+
+### 🧪 Lab Environment & Tools Used:
+
+All MikroTik labs in this repository were performed in a virtualized environment to safely simulate real-world network scenarios without affecting production systems.
+
+### 🖥️ *Virtualization Platform:*
+
+* VMware® Workstation 17 Pro
+
+Used to create isolated virtual networks and run multiple routers simultaneously for:
+
+* Client–server labs
+
+* Site-to-site VPN testing
+
+* Traffic shaping and routing experiments
+
+### 🌐 *Router Operating System:*
+
+MikroTik RouterOS (CHR)
+
+* Image used: chr-7.18.2.ova
+
+The Cloud Hosted Router (CHR) version of RouterOS was used because:
+
+* It provides full RouterOS functionality
+
+* Ideal for lab environments
+
+* Widely used for training and certification practice
+
+* Supports advanced features (PPP, VPN, QoS, Firewall, Routing)
