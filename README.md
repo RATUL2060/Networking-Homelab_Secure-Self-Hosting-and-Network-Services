@@ -383,7 +383,7 @@ The Cloud Hosted Router (CHR) version of RouterOS was used because:
 
 * Supports advanced features (PPP, VPN, QoS, Firewall, Routing).
 
-# 📅 PPTP (Site-to-Site VPN Basics):
+## 📅 PPTP (Site-to-Site VPN Basics)
 
 📌The objective of this lab is to understand the fundamentals of site-to-site VPN connectivity using PPTP (Point-to-Point Tunneling Protocol).
 
@@ -428,7 +428,7 @@ The following exported RouterOS configuration files are included:
 
 These files can be imported into RouterOS to reproduce the lab.
 
-# 📅 PPPoE (ISP Authentication Basics)
+## 📅 PPPoE (ISP Authentication Basics)
 
 The objective of this lab is to understand how ISPs authenticate users and assign IP addresses using PPPoE (Point-to-Point Protocol over Ethernet).
 
