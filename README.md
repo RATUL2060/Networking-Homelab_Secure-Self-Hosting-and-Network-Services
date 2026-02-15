@@ -361,11 +361,11 @@ All MikroTik labs in this repository were performed in a virtualized environment
 
 Used to create isolated virtual networks and run multiple routers simultaneously for:
 
-* Client–server labs
+* Client–server labs.
 
-* Site-to-site VPN testing
+* Site-to-site VPN testing.
 
-* Traffic shaping and routing experiments
+* Traffic shaping and routing experiments.
 
 ### 🌐 *Router Operating System:*
 
@@ -375,13 +375,13 @@ MikroTik RouterOS (CHR)
 
 The Cloud Hosted Router (CHR) version of RouterOS was used because:
 
-* It provides full RouterOS functionality
+* It provides full RouterOS functionality.
 
-* Ideal for lab environments
+* Ideal for lab environments.
 
-* Widely used for training and certification practice
+* Widely used for training and certification practice.
 
-* Supports advanced features (PPP, VPN, QoS, Firewall, Routing)
+* Supports advanced features (PPP, VPN, QoS, Firewall, Routing).
 
 # 📅 PPTP (Site-to-Site VPN Basics):
 
@@ -391,40 +391,94 @@ The Cloud Hosted Router (CHR) version of RouterOS was used because:
 
 ### 🧩 *Lab Topology:*
 
-* One router acts as HQ (PPTP Server)
+* One router acts as HQ (PPTP Server).
 
-* One router acts as Branch (PPTP Client)
+* One router acts as Branch (PPTP Client).
 
 * Both routers run MikroTik RouterOS (CHR) in a virtual lab
 
 ### ⚙️ *What Was Configured:*
 On the HQ Router (PPTP Server)
 
-* PPTP server enabled
+* PPTP server enabled.
 
-* PPP profile configuration
+* PPP profile configuration.
 
-* User authentication (PPP Secrets)
+* User authentication (PPP Secrets).
 
-* IP address assignment for tunnel interfaces
+* IP address assignment for tunnel interfaces.
 
 On the Branch Router (PPTP Client)
 
-* PPTP client interface
+* PPTP client interface.
 
-* Authentication credentials
+* Authentication credentials.
 
-* Remote server connection
+* Remote server connection.
 
-* Routing to reach HQ network
+* Routing to reach HQ network.
 
 ### 📂 *Configuration Files:*
 
 The following exported RouterOS configuration files are included:
 
-* HQ-pptp.rsc — PPTP server (HQ) configuration
+* HQ-pptp.rsc — PPTP server (HQ) configuration.
 
-* Branch-pptp.rsc — PPTP client (Branch) configuration
+* Branch-pptp.rsc — PPTP client (Branch) configuration.
 
 These files can be imported into RouterOS to reproduce the lab.
+
+# 📅 PPPoE (ISP Authentication Basics)
+
+The objective of this lab is to understand how ISPs authenticate users and assign IP addresses using PPPoE (Point-to-Point Protocol over Ethernet).
+
+This lab simulates a real ISP access scenario, where:
+
+* The ISP controls authentication.
+
+* Users receive IP addresses dynamically.
+
+* Bandwidth and access can be managed centrally.
+
+### 🧩 *Lab Topology:*
+
+* One router acts as a PPPoE Server (ISP side).
+
+* One router acts as a PPPoE Client (User side).
+
+* Both routers are running MikroTik RouterOS (CHR) in a virtual environment.
+
+### ⚙️ *What Was Configured:*
+
+On the PPPoE Server
+
+* PPP profile
+
+* IP address pool
+
+* PPPoE server on Ethernet interface
+
+* User authentication (PPP Secrets)
+
+* Local and remote address assignment
+
+On the PPPoE Client
+
+* PPPoE client interface
+
+* Username and password authentication
+
+* Automatic IP address assignment from server
+
+![PPPoE](PPPoE/PPPoE.JPG)
+
+### 📂 *Configuration Files:*
+
+The following exported RouterOS configuration files are included:
+
+* PPPoE Server.rsc — PPPoE server configuration
+
+* PPPoE Client.rsc — PPPoE client configuration
+
+These files can be imported directly into RouterOS for testing
 
